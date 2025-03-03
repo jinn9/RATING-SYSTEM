@@ -1,6 +1,5 @@
 package com.github.jinn9.rating_system.controller;
 
-import com.github.jinn9.rating_system.domain.Business;
 import com.github.jinn9.rating_system.dto.BusinessDto;
 import com.github.jinn9.rating_system.service.BusinessService;
 import lombok.RequiredArgsConstructor;
@@ -18,9 +17,8 @@ public class BusinessController {
     private final BusinessService businessService;
 
     @GetMapping
-    public Page<BusinessDto.Response> findBusiness(Pageable pageable) {
-        Page<Business> page = businessService.findBusinesses(pageable);
-        return page.map(BusinessDto.Response::of);
+    public Page<BusinessDto.Response> findBusiness(Pageable pageable, BusinessDto.Request filterParams) {
+        return businessService.findBusinesses(pageable, filterParams);
     }
 
 }

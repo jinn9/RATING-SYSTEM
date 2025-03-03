@@ -1,6 +1,6 @@
 package com.github.jinn9.rating_system.service;
 
-import com.github.jinn9.rating_system.domain.Business;
+import com.github.jinn9.rating_system.dto.BusinessDto;
 import com.github.jinn9.rating_system.repository.BusinessRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -15,7 +15,7 @@ public class BusinessService {
 
     private final BusinessRepository businessRepository;
 
-    public Page<Business> findBusinesses(Pageable pageable) {
-        return businessRepository.findAll(pageable);
+    public Page<BusinessDto.Response> findBusinesses(Pageable pageable, BusinessDto.Request filterParams) {
+        return businessRepository.findAll(pageable, filterParams);
     }
 }

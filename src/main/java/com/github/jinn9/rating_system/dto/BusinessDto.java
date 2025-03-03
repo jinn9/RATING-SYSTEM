@@ -8,6 +8,15 @@ import lombok.Data;
 
 public class BusinessDto {
 
+    @AllArgsConstructor
+    @Data
+    public static class Request {
+        private String name;
+        private String city;
+        private String country;
+        private String description;
+    }
+
     @Builder
     @AllArgsConstructor
     @Data
