@@ -1,14 +1,11 @@
 package com.github.jinn9.rating_system.domain;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Getter
 @ToString(exclude = {"member", "business"})
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"member_id", "business_id"})})
 @Entity
 public class Rating {

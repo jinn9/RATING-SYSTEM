@@ -1,14 +1,10 @@
 package com.github.jinn9.rating_system.domain;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @ToString
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class Business {
 
@@ -25,4 +21,5 @@ public class Business {
     private String phoneNumber;
 
     private String description;
+
 }
